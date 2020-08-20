@@ -88,7 +88,7 @@ SELECT
 FROM
 	employees
 WHERE
-	last_name LIKE '__n_l%';
+	last_name LIKE '__e_a%';
 
 -- 查询员工名中第二个字符为_的员工名
 

@@ -2,7 +2,7 @@
 
 -- 一、字符函数
 
--- 1.length 获取参数值的字节个数
+-- 1.length 获取参数值的字符个数
 SELECT LENGTH('john');
 SELECT LENGTH('张三丰hahaha');
 
@@ -47,7 +47,7 @@ SELECT TRIM('a' FROM 'aaaaaaaaa张aaaaaaaaaaaa翠山aaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 SELECT LPAD('李四',5,'*') AS 结果;
 
--- 8.rpad 用指定的字符实现右填充指定长度（用*左填充到满7个字符）
+-- 8.rpad 用指定的字符实现右填充指定长度（用*右填充到满7个字符）
 
 SELECT RPAD('掌上宝',7,'*') AS 结果;
 
