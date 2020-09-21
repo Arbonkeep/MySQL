@@ -75,11 +75,11 @@ SELECT * FROM account;
 
 /*
 事务的隔离级别：
-		  脏读		不可重复读	幻读
-read uncommitted：√		√		√
-read committed：  ×		√		√	oracle默认
-repeatable read： ×		×		√	mysql默认
-serializable	  ×             ×               ×
+		  			脏读	不可重复读	幻读
+read uncommitted：   √			√		√
+read committed：     ×			√		√	oracle默认
+repeatable read：    ×			×		√	mysql默认
+serializable	     ×    		×       ×
 
 */
 
