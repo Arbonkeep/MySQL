@@ -24,7 +24,7 @@ WHERE
 	
 -- 2.按逻辑表达式查询
 
--- 查询工资z在10000到20000之间的员工名、工资以及奖金
+-- 查询工资在10000到20000之间的员工名、工资以及奖金
 SELECT
 	last_name,
 	salary,
@@ -79,7 +79,7 @@ SELECT
 FROM
 	employees
 WHERE
-	last_name LIKE '%a%';#abc
+	last_name LIKE '%a%';-- abc
 
 -- 查询员工名中第三个字符为e，第五个字符为a的员工名和工资
 SELECT

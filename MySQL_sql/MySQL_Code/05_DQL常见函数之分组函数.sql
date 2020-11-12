@@ -35,13 +35,14 @@ SELECT COUNT(last_name) FROM employees;
 
 -- 3.是否忽略null
 
--- 查看sum，avg是否忽略null值计算(如果平均值与除以35相等就说明忽略null值)
+-- 查看sum，avg是否忽略null值计算(如果平均值与总和除以35相等就说明忽略null值)
 SELECT SUM(commission_pct) ,AVG(commission_pct),SUM(commission_pct)/35,SUM(commission_pct)/107 FROM employees;
+-- sum，与avg是忽略null值计算
 
--- 查看max，min是否忽略null值参与计算
+-- 查看max，min是否忽略null值参与计算（会忽略）
 SELECT MAX(commission_pct) ,MIN(commission_pct) FROM employees;
 
--- -- 查看count是否忽略null值参与计算
+-- -- 查看count是否忽略null值参与计算（会忽略）
 SELECT COUNT(commission_pct) FROM employees;
 SELECT commission_pct FROM employees;
 
