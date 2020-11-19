@@ -48,7 +48,7 @@ HAVING COUNT(*)>5;
 
 -- 查询每个工种有奖金的员工的最高工资>12000的工种编号和最高工资
 
-SELECT MAX(salary),job_id
+SELECT MAX(salary),job_id 
 FROM employees
 WHERE commission_pct IS NOT NULL
 GROUP BY job_id
@@ -86,7 +86,7 @@ HAVING COUNT(*) > 5;
 -- 查询每个部门每个工种的员工的平均工资
 SELECT AVG(salary),job_id,department_id
 FROM employees
-GROUP department_id,job_id;
+GROUP BY department_id,job_id;
 
 -- 查询每个部门每个工种的最低工资,并按最低工资降序
 SELECT MIN(salary),job_id,department_id

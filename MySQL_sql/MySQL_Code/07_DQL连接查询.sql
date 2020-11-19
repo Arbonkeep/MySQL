@@ -21,6 +21,7 @@ WHERE boys.boyfriend_id = beauty.id; -- 添加限定条件
 -- 一、sq192标准
 
 -- [1]等值连接
+--在连接条件中使用等于号(=)运算符比较被连接列的列值，其查询结果中列出被连接表中的所有列，包括其中的重复列
 
 -- 1.等值连接
 
@@ -42,9 +43,9 @@ WHERE employees.`department_id`= departments.`department_id`;
 注意：如果为表起了别名，则查询的字段就不能使用原来的表名去限定
 
 */
-#查询员工名、工种号、工种名
+-- 查询员工名、工种号、工种名
 
--- 没有起别名
+-- 没有起别名(注意job_id两个表都有，那么需要指定显示某一个表的)
 SELECT employees.last_name,employees.job_id,jobs.job_title
 FROM employees,jobs
 WHERE employees.`job_id`=jobs.`job_id`;
@@ -54,7 +55,7 @@ FROM employees  e,jobs j
 WHERE e.`job_id`=j.`job_id`;
 
 
--- 3.两个表的顺序是否可以调换
+-- 3.两个表的顺序是否可以调换 可以
 
 -- 查询员工名、工种号、工种名
 
@@ -83,7 +84,7 @@ AND city LIKE '_o%';
 -- 5.可以加分组
 
 
-#案例1：查询每个城市的部门个数
+-- 案例1：查询每个城市的部门个数
 
 SELECT COUNT(*) 个数,city
 FROM departments d,locations l
@@ -91,7 +92,7 @@ WHERE d.`location_id`=l.`location_id`
 GROUP BY city;
 
 
-#案例2：查询有奖金的每个部门的部门名和部门的领导编号和该部门的最低工资
+-- 案例2：查询有奖金的每个部门的部门名和部门的领导编号和该部门的最低工资
 SELECT department_name,d.`manager_id`,MIN(salary)
 FROM departments d,employees e
 WHERE d.`department_id`=e.`department_id`
@@ -109,7 +110,7 @@ WHERE e.`job_id`=j.`job_id`
 GROUP BY job_title
 ORDER BY COUNT(*) DESC;
 
--- 7.可以实现三表连接？
+-- 7.可以实现三表连接？ 可以
 
 -- 查询员工名、部门名和所在的城市名以s开头的城市，并按部门名降序显示
 
