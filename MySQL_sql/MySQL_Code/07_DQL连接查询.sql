@@ -334,7 +334,7 @@ LEFT OUTER JOIN departments d
 ON l.`location_id` = d.`location_id`
 WHERE d.`department_id` IS NULL;
 
--- 案例：查询部门名为SAL或IT的员工信息
+-- 案例：查询部门名为SAL或IT的员工信息 
 
 SELECT e.*,d.`department_name`
 FROM departments d
