@@ -5,7 +5,7 @@
 /*
 1、标量子查询（单行子查询）
 2、列子查询（多行子查询）
-3、行子查询（多列多行）
+3、行子查询（多列）
 
 特点：
 ①子查询放在小括号内
@@ -103,7 +103,7 @@ HAVING MIN(salary)>(
 );
 
 -- 非法使用标量子查询
--- 就是指内查询的结果不是单行单列
+-- 就是指查询的结果不是单行单列
 
 SELECT MIN(salary),department_id
 FROM employees
@@ -123,6 +123,7 @@ HAVING MIN(salary)>(
 	in：等于列表中任意一个
 	any|some：和子查询返回的某一个值比较
 	all：和子查询中返回的所有值进行比较
+	any表示有任何一个满足就返回true，all表示全部都满足才返回true
 
 */
 
@@ -217,16 +218,16 @@ WHERE (employee_id,salary)=(
 	FROM employees
 );
 
--- 使用列子查询完成
-#①查询最小的员工编号
+-- 使用行子查询完成
+-- ①查询最小的员工编号
 SELECT MIN(employee_id)
 FROM employees
 
-#②查询最高工资
+-- ②查询最高工资
 SELECT MAX(salary)
 FROM employees
 
-#③查询员工信息
+-- ③查询员工信息
 SELECT *
 FROM employees
 WHERE employee_id=(
